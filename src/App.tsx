@@ -7,10 +7,12 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
+  const API_URL = "https://wayback-backend.onrender.com";
   function fetchViaProxy(url: string): Promise<Response> {
-    const proxyUrl = "http://localhost:4000/proxy?url=" + encodeURIComponent(url);
+    const proxyUrl = `${API_URL}/proxy?url=` + encodeURIComponent(url);
     return fetch(proxyUrl);
   }
+
 
 const fetchAsset = async (assetUrl: string, siteId: number, type: string) => {
   try {
