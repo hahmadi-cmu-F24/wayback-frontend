@@ -17,7 +17,7 @@ export default function Viewer() {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    db.sites.toArray().then((data: Site[]): void => {
+    db.sites.toArray().then((data: any): void => {
       setSites(data);
     });
   }, []);
